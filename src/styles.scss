@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$dynamic-theme-primary: (
+  50 : var(--theme-primary-50),
+  100 : var(--theme-primary-100),
+  200 : var(--theme-primary-200),
+  300 : var(--theme-primary-300),
+  400 : var(--theme-primary-400),
+  500 : var(--theme-primary-500),
+  600 : var(--theme-primary-600),
+  700 : var(--theme-primary-700),
+  800 : var(--theme-primary-800),
+  900 : var(--theme-primary-900),
+  A100 : var(--theme-primary-A100),
+  A200 : var(--theme-primary-A200),
+  A400 : var(--theme-primary-A400),
+  A700 : var(--theme-primary-A700),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+
+
+    //50: var(--theme-primary-contrast-50),
+    //100: var(--theme-primary-contrast-100),
+    //200: var(--theme-primary-contrast-200),
+    //300: var(--theme-primary-contrast-300),
+    //400: var(--theme-primary-contrast-400),
+    //500: var(--theme-primary-contrast-500),
+    //600: var(--theme-primary-contrast-600),
+    //700: var(--theme-primary-contrast-700),
+    //800: var(--theme-primary-contrast-800),
+    //900: var(--theme-primary-contrast-900),
+    //A100: var(--theme-primary-contrast-A100),
+    //A200: var(--theme-primary-contrast-A200),
+    //A400: var(--theme-primary-contrast-A400),
+    //A700: var(--theme-primary-contrast-A700),
+  )
+);
+
+$dynamic-theme-secondary: (
+  50 : var(--theme-secondary-50),
+  100 : var(--theme-secondary-100),
+  200 : var(--theme-secondary-200),
+  300 : var(--theme-secondary-300),
+  400 : var(--theme-secondary-400),
+  500 : var(--theme-secondary-500),
+  600 : var(--theme-secondary-600),
+  700 : var(--theme-secondary-700),
+  800 : var(--theme-secondary-800),
+  900 : var(--theme-secondary-900),
+  A100 : var(--theme-secondary-A100),
+  A200 : var(--theme-secondary-A200),
+  A400 : var(--theme-secondary-A400),
+  A700 : var(--theme-secondary-A700),
+  contrast: (
+    //50: var(--theme-secondary-contrast-50),
+    //100: var(--theme-secondary-contrast-100),
+    //200: var(--theme-secondary-contrast-200),
+    //300: var(--theme-secondary-contrast-300),
+    //400: var(--theme-secondary-contrast-400),
+    //500: var(--theme-secondary-contrast-500),
+    //600: var(--theme-secondary-contrast-600),
+    //700: var(--theme-secondary-contrast-700),
+    //800: var(--theme-secondary-contrast-800),
+    //900: var(--theme-secondary-contrast-900),
+    //A100: var(--theme-secondary-contrast-A100),
+    //A200: var(--theme-secondary-contrast-A200),
+    //A400: var(--theme-secondary-contrast-A400),
+    //A700: var(--theme-secondary-contrast-A700),
+
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$candy-app-primary: mat-palette($dynamic-theme-primary);
+
+
+$candy-app-accent:  mat-palette($dynamic-theme-secondary);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
