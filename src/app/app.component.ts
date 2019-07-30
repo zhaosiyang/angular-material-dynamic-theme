@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import * as tinycolor from 'tinycolor2';
+
+declare const tinycolor: any;
 
 export interface Color {
   name: string;
