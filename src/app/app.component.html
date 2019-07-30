@@ -3,6 +3,10 @@
 </mat-form-field>
 
 <button mat-raised-button color="primary" (click)="savePrimaryColor()">Save Primary Color</button>
+<mat-spinner [diameter]="40"></mat-spinner>
+<mat-spinner [diameter]="40"></mat-spinner>
+<mat-spinner [diameter]="40"></mat-spinner>
+<mat-spinner [diameter]="40"></mat-spinner>
 
 <p>Primary Color Palette</p>
 <div *ngFor="let color of primaryColorPalette" [style.background-color]="color.hex" [style.color]="color.darkContrast ? 'black' : 'white'">
@@ -15,8 +19,15 @@
 </mat-form-field>
 
 <button mat-raised-button color="accent" (click)="saveSecondaryColor()">Save Secondary Color</button>
+<mat-spinner color="accent" [diameter]="40"></mat-spinner>
+<mat-spinner color="accent" [diameter]="40"></mat-spinner>
+<mat-spinner color="accent" [diameter]="40"></mat-spinner>
+<mat-spinner color="accent" [diameter]="40"></mat-spinner>
 
 <p>Secondary Color Palette</p>
 <div *ngFor="let color of secondaryColorPalette" [style.background-color]="color.hex" [style.color]="color.darkContrast ? 'black' : 'white'">
   {{color.name}}
 </div>
+
+<hr>
+
