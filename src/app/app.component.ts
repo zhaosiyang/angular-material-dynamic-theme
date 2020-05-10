@@ -34,19 +34,24 @@ export class AppComponent {
     this.primaryColorPalette = computeColors(this.primaryColor);
 
     for (const color of this.primaryColorPalette) {
-      const key = `--theme-primary-${color.name}`;
-      const value = color.hex;
-      document.documentElement.style.setProperty(key, value);
+      const key1 = `--theme-primary-${color.name}`;
+      const value1 = color.hex;
+      const key2 = `--theme-primary-contrast-${color.name}`;
+      const value2 = color.darkContrast ? 'rgba(0,0,0, 0.87)' : 'white';
+      document.documentElement.style.setProperty(key1, value1);
+      document.documentElement.style.setProperty(key2, value2);
     }
   }
 
   saveSecondaryColor() {
     this.secondaryColorPalette = computeColors(this.secondaryColor);
-
     for (const color of this.secondaryColorPalette) {
-      const key = `--theme-secondary-${color.name}`;
-      const value = color.hex;
-      document.documentElement.style.setProperty(key, value);
+      const key1 = `--theme-secondary-${color.name}`;
+      const value1 = color.hex;
+      const key2 = `--theme-secondary-contrast-${color.name}`;
+      const value2 = color.darkContrast ? 'rgba(0,0,0, 0.87)' : 'white';
+      document.documentElement.style.setProperty(key1, value1);
+      document.documentElement.style.setProperty(key2, value2);
     }
   }
 
